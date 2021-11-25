@@ -4,10 +4,10 @@ const server = express();
 const cors = require('cors');
 const path = require('path');
 const serveStatic = require('serve-static');
-
+const uri = process.env.MONGODB_URI; 
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+mongoose.connect(uri, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to database!'));
