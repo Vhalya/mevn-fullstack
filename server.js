@@ -14,7 +14,7 @@ db.once('open', () => console.log('Connected to database!'));
 
 server.use(express.json());
 server.use(cors());
-server.use(serveStatic(__dirname + '/client/dist'));
+server.use(serveStatic(__dirname + '/dist'));
 const router = require('./characters');
 server.use('/characters', router);
 
